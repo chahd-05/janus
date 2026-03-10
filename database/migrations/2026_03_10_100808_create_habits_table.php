@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('frequency', ['daily', 'weekly', 'monthly']);
             $table->unsignedInteger('target_day');
             $table->boolean('is_active')->default(true);
+            $table->string('color',7)->nullable();
             $table->timestamps();
         });
     }
