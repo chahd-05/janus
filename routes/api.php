@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\api\AutController;
-use App\Http\Controllers\api\CategoryController;
 use App\Http\Controllers\api\HabitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
