@@ -14,4 +14,11 @@ Route::apiResource('/habit', HabitController::class)->middleware('auth:sanctum')
 Route::post('/register', [AutController::class, 'register']);
 Route::post('/logout', [AutController::class, 'logout'])->middleware('auth:sanctum');
 Route::post('/login', [AutController::class, 'login']);
-Route::get('/habitLog', [habitLogController::class, 'habitLog']);
+
+Route::middleware('auth:sanctum')->group(function () {
+Route::get('/habits/{id}/logs', [habitLogController::class, 'index']);
+Route::post('/habits/{id}/logs', [habitLogController::class, 'store']);
+Route::delete('/habits/{id}/logs/{logId}', [habitLogController::class, 'destroy']);
+Route::get('/habits/{id}/stats', [habitLogController::class, 'stats']);
+Route::get('/stats/overview', [habitLogController::class, 'overview']);
+});
