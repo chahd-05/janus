@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Habits;
 use Illuminate\Database\Eloquent\Model;
 
 class HabitLog extends Model
@@ -10,4 +11,8 @@ class HabitLog extends Model
         'note',
         'date'
     ];
+
+    public function habit(){
+        return $this->belongsTo(Habits::class);
+    }
 }
