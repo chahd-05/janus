@@ -40,7 +40,7 @@ class AutController extends Controller
             ];
         } else {
             return [
-                'message' => 'check youre credentiels'
+                'message' => 'check your credentiels'
             ];
         }
     }
